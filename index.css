@@ -1,0 +1,84 @@
+body {
+    background-color: rgb(27, 26, 26);
+}
+
+#container {
+    width: 1024px;
+    height: 550px;
+    margin: 20px auto;
+}
+
+#calculator {
+    width: 320px;
+    height: 520px;
+    background-color: rgb(45, 45, 45);
+    margin: 0 auto;
+    top: 20px;
+    border: 1px solid gold;
+    border-radius: 5px;
+    position: relative;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#result {
+    height: 120px;
+}
+
+#history {
+    text-align: right;
+    height: 20px;
+    margin: 0 20px;
+    padding-top: 20px;
+    font-size: 15px;
+    color: azure;
+}
+
+#output {
+    text-align: right;
+    height: 60px;
+    margin: 10px 20px;
+    font-size: 30px;
+}
+
+.keyboard {
+    height: 400px;
+}
+
+.operator, .number, .empty {
+    width: 50px;
+    height: 50px;
+    margin: 15px;
+    float: left;
+    background-color: transparent;
+    border: 1px solid gold;
+    border-radius: 50%;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.operator, .number {
+    cursor: pointer;
+    font-size: 25px;
+    color: aliceblue;
+}
+
+.operator {
+    background-color: goldenrod;
+}
+
+.empty {
+    border-width: 0;
+}
+
+.number:hover {
+    background-color: rgb(60, 59, 59);
+}
+
+.operator:hover {
+    background-color: gold;
+}
+
+.operator:active, .number:active {
+    font-size: 15px;
+}
+

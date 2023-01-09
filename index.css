@@ -1,84 +1,88 @@
-body {
-    background-color: rgb(27, 26, 26);
-}
-
-#container {
-    width: 1024px;
-    height: 550px;
-    margin: 20px auto;
-}
-
-#calculator {
-    width: 320px;
-    height: 520px;
-    background-color: rgb(45, 45, 45);
-    margin: 0 auto;
-    top: 20px;
-    border: 1px solid gold;
-    border-radius: 5px;
-    position: relative;
+#calc {
+    max-width: 300px;
+    height: 500px;
+    padding: 20px;
+    background-color: #000;
+    margin: auto;
+    margin-top: 20px;
+    border-radius: 20px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    user-select: none;
 }
 
-#result {
-    height: 120px;
+.input {
+    height: 100px;
+    padding: 10px;
+    display: grid;
+    justify-content: end;
+    align-items: end;
+    margin-bottom: 5px;
 }
 
-#history {
-    text-align: right;
-    height: 20px;
-    margin: 0 20px;
-    padding-top: 20px;
-    font-size: 15px;
-    color: azure;
+.input p {
+    font-size: 2rem;
+    margin: 0;
 }
 
-#output {
-    text-align: right;
-    height: 60px;
-    margin: 10px 20px;
-    font-size: 30px;
+.btn_all {
+    display: grid;
+    grid-template-areas: 
+    "clear back per divide"
+    "seven eight nine multi"
+    "four five six plus"
+    "one two three minus"
+    "zero zero dot equal";
+    grid-gap: 7px;
+    justify-items: center;
 }
 
-.keyboard {
-    height: 400px;
-}
-
-.operator, .number, .empty {
+.btn {
     width: 50px;
     height: 50px;
-    margin: 15px;
-    float: left;
-    background-color: transparent;
-    border: 1px solid gold;
+    color: white;
+    padding: 5px;
+    margin: 0px;
+    text-align: center;
+    line-height: 50px;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+#zero {
+    grid-area: zero;
+    width: 100%;
+    border-radius: 40px;
+}
+
+.btn {
+    margin: 5px;
+    background-color: #333;
     border-radius: 50%;
     font-weight: bold;
-    font-size: 15px;
 }
 
-.operator, .number {
-    cursor: pointer;
-    font-size: 25px;
-    color: aliceblue;
+#grey {
+    background-color: #a6a6a6;
 }
 
-.operator {
-    background-color: goldenrod;
+#grey:hover {
+    filter: brightness(120%);
 }
 
-.empty {
-    border-width: 0;
+.bg-orange {
+    background: #ff9501;
 }
 
-.number:hover {
+.btn:hover {
     background-color: rgb(60, 59, 59);
 }
 
-.operator:hover {
-    background-color: gold;
+.bg-orange:hover {
+    background: #ff9501;
+    filter: brightness(110%);
 }
 
-.operator:active, .number:active {
+.btn:active {
     font-size: 15px;
 }
 

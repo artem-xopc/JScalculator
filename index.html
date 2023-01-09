@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,41 +8,39 @@
     <link rel="stylesheet" href="index.css">
     <title>Calculator</title>
 </head>
+
 <body>
-    <div id="container">
-        <div id="calculator">
-            <div id="result">
-                <div id="history">
-                    <p id="history__value"></p>
-                </div>
-                <div id="output">
-                    <p id="output__value"></p>
-                </div>
-            </div>
-            <div class="keyboard">
-                <button class="operator" id="%">%</button>
-                <button class="operator" id="clear">C</button>
-                <button class="operator" id="backspace">CE</button>
-                <button class="operator" id="/">&#247;</button>
-                <button class="number" id="7">7</button>
-                <button class="number" id="8">8</button>
-                <button class="number" id="9">9</button>
-                <button class="operator" id="*">&times;</button>
-                <button class="number" id="4">4</button>
-                <button class="number" id="5">5</button>
-                <button class="number" id="6">6</button>
-                <button class="operator" id="-">-</button>
-                <button class="number" id="1">1</button>
-                <button class="number" id="2">2</button>
-                <button class="number" id="3">3</button>
-                <button class="operator" id="+">+</button>
-                <button class="empty" id="empty"></button>
-                <button class="number" id="0">0</button>
-                <button class="empty" id="empty"></button>
-                <button class="operator" id="=">=</button>
-            </div>
+    <div id="calc">
+        <div class="input">
+          <p>0</p>
         </div>
-    </div>
+        <div class="btn_all">
+          <div class="btn clear" id="grey" onClick={clearAll}>C</div>
+          <div class="btn back" id="grey">CE</div>
+          <div class="btn per" id="grey">%</div>
+          <div class="btn divide bg-orange">/</div>
+  
+          <div class="btn seven">7</div>
+          <div class="btn eight">8</div>
+          <div class="btn nine">9</div>
+          <div class="btn multi bg-orange">*</div>
+  
+          <div class="btn four">4</div>
+          <div class="btn five">5</div>
+          <div class="btn six">6</div>
+          <div class="btn plus bg-orange">+</div>
+  
+          <div class="btn one">1</div>
+          <div class="btn two">2</div>
+          <div class="btn three">3</div>
+          <div class="btn minus bg-orange">-</div>
+  
+          <div class="btn" id="zero">0</div>
+          <div class="btn dot">.</div>
+          <div class="btn equal bg-orange">=</div>
+        </div>
+      </div>
     <script src="index.js"></script>
 </body>
+
 </html>

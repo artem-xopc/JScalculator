@@ -16,6 +16,10 @@ body {
     /* font-family: "JetBrainsMono",sans-serif; */
 }
 
+.center {
+    text-align: center;
+}
+
 #calc {
     max-width: 500px;
     height: 550px;

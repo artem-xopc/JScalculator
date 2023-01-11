@@ -1,13 +1,28 @@
+body {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+}
+
+.text_desc {
+    margin: 15px;
+    padding: 15px;
+    font-family: 'Franklin Gothic Medium' sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    /* font-family: "JetBrainsMono",sans-serif; */
+}
+
 #calc {
     max-width: 300px;
     height: 500px;
     padding: 20px;
     background-color: #000;
-    margin: auto;
+    margin: 15px 0 15px 25px;
     margin-top: 20px;
     border-radius: 20px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     user-select: none;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 .input {
@@ -22,6 +37,7 @@
 .input p {
     font-size: 2rem;
     margin: 0;
+    overflow: hidden;
 }
 
 .btn_all {

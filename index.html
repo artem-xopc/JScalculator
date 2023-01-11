@@ -2,45 +2,65 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="index.css">
-    <title>Calculator</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="index.css">
+  <title>Calculator</title>
 </head>
 
 <body>
-    <div id="calc">
-        <div class="input">
-          <p>0</p>
-        </div>
-        <div class="btn_all">
-          <div class="btn clear" id="grey" onClick={clearAll}>C</div>
-          <div class="btn back" id="grey">CE</div>
-          <div class="btn per" id="grey">%</div>
-          <div class="btn divide bg-orange">/</div>
-  
-          <div class="btn seven">7</div>
-          <div class="btn eight">8</div>
-          <div class="btn nine">9</div>
-          <div class="btn multi bg-orange">*</div>
-  
-          <div class="btn four">4</div>
-          <div class="btn five">5</div>
-          <div class="btn six">6</div>
-          <div class="btn plus bg-orange">+</div>
-  
-          <div class="btn one">1</div>
-          <div class="btn two">2</div>
-          <div class="btn three">3</div>
-          <div class="btn minus bg-orange">-</div>
-  
-          <div class="btn" id="zero">0</div>
-          <div class="btn dot">.</div>
-          <div class="btn equal bg-orange">=</div>
-        </div>
-      </div>
-    <script src="index.js"></script>
+  <span class="text_desc">
+    <p>
+      Здравствуйте, на данной странице представлен калькулятор, который выполнен на JavaScript.
+      Приятного использования!
+    </p>
+    <p>
+      Инструкция по эксплуатации: 
+    </p>
+    <ul>
+      <li>Проценты считаются следующим образом: сначала вы вводите первое число (над которым необходимо совершить операцию), а затем нажимаете на кнопку процента и далее вводите необходимый процент;</li>
+      <li>Факториал будет возможно подсчитать позже (в разработке)</li>
+      <!-- <li></li> -->
+    </ul>
+  </span>
+  <div id="calc">
+    <div class="input">
+      <p>0</p>
+    </div>
+    <div class="btn_all">
+      <div class="btn clear" id="grey" onClick={clearAll}>C</div>
+      <div class="btn back" id="grey">x!</div>
+      <div class="btn per" id="grey">%</div>
+      <div class="btn divide bg-orange">/</div>
+
+      <div class="btn seven">7</div>
+      <div class="btn eight">8</div>
+      <div class="btn nine">9</div>
+      <div class="btn multi bg-orange">*</div>
+
+      <div class="btn four">4</div>
+      <div class="btn five">5</div>
+      <div class="btn six">6</div>
+      <div class="btn plus bg-orange">+</div>
+
+      <div class="btn one">1</div>
+      <div class="btn two">2</div>
+      <div class="btn three">3</div>
+      <div class="btn minus bg-orange">-</div>
+
+      <div class="btn" id="zero">0</div>
+      <div class="btn dot">.</div>
+      <div class="btn equal bg-orange">=</div>
+    </div>
+  </div>
+  <div class="text_desc">
+    <p>
+      В разработке находится функция подсчёта факториала. 
+    </p>
+  </div>
+  <script src="index.js"></script>
+  <!-- <script src="calc.js"></script> -->
 </body>
 
 </html>

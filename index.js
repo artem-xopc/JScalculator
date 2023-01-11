@@ -89,12 +89,15 @@ document.querySelector(".btn_all").onclick = (event) => {
     switch (sign) {
       case "+":
         firstNum = +firstNum + +secondNum;
+        output.textContent = firstNum;
         break;
       case "-":
         firstNum = firstNum - secondNum;
+        output.textContent = firstNum;
         break;
       case "*":
         firstNum = firstNum * secondNum;
+        output.textContent = firstNum;
         break;
       case "/":
         if (secondNum === "0") {
@@ -105,22 +108,24 @@ document.querySelector(".btn_all").onclick = (event) => {
           return;
         }
         firstNum = firstNum / secondNum;
+        output.textContent = firstNum;
         break;
       case "%":
         firstNum = (firstNum * secondNum) / 100;
+        output.textContent = firstNum;
         break;
       case "x!":
         console.log('Проверка работоспособности')
-        for (i = 1; i < firstNum; firstNum--) {
+        for (i = 1; firstNum > 1; firstNum--) {
           console.log('Входим в цикл')
-          firstNum = firstNum * i;
-          console.log(firstNum)
-          output.textContent = firstNum;
+          i = firstNum * i;
+          console.log(i)
+          output.textContent = i;
         }
+        output.textContent = i;
         break;
     }
     finish = true;
-    output.textContent = firstNum;
     history_out.textContent = `${firstNum}` + `${sign}` + `${secondNum}`;
   }
 };

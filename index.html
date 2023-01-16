@@ -1,80 +1,143 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="index.css" />
+    <title>калькулятор</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="index.css">
-  <title>Calculator</title>
-</head>
-
-<body>
-  <span class="text_desc">
-    <p>
-      Здравствуйте, на данной странице представлен калькулятор, который выполнен на JavaScript.
-      Приятного использования!
-    </p>
-    <p class="center">
-      Инструкция по эксплуатации: 
-    </p>
-    <ul>
-      <li>Проценты считаются следующим образом: сначала вы вводите первое число (над которым необходимо совершить операцию), 
-        а затем нажимаете на кнопку процента и далее вводите необходимый процент;</li>
-      <li>Факториал считается следующим образом: сначала вы вводите первое число (над которым необходимо совершить операцию), 
-        а затем нажимаете на кнопку x! и далее нажимаете на =.</li>
-    </ul>
-  </span>
-  <div id="calc">
-    <div class="history">
+  <body>
+    <span class="center">
+      <h2>
+        Здравствуйте, на данной странице представлен калькулятор, который
+        выполнен на JavaScript.
+      </h2>
+      <h3>Приятного использования!</h3>
+    </span>
+    <div id="calc">
+      <!-- <div class="history">
       <p>-</p>
+    </div> -->
+      <div class="input">
+        <p>0</p>
+      </div>
+      <div class="btn_all">
+        <div class="btn rad" id="err">rad</div>
+        <div class="btn sin" id="black">sin</div>
+        <div class="btn cos" id="black">cos</div>
+        <div class="btn tan" id="black">tan</div>
+        <div class="btn ctg" id="black">ctg</div>
+
+        <div class="btn clear" id="tech" onClick="{clearAll}">C</div>
+        <div class="btn back" id="err">CE</div>
+        <div class="btn fact">x!</div>
+        <div class="btn ln">ln</div>
+        <div class="btn log">lg</div>
+
+        <div class="btn pi" id="err">∏</div>
+        <div class="btn per" id="orange">%</div>
+        <div class="btn open" id="err">(</div>
+        <div class="btn close" id="err">)</div>
+        <div class="btn divide" id="orange">/</div>
+
+        <div class="btn sqrt" id="orange">√x</div>
+        <div class="btn seven">7</div>
+        <div class="btn eight">8</div>
+        <div class="btn nine">9</div>
+        <div class="btn multi" id="orange">*</div>
+
+        <div class="btn degreeNeg" id="err">+/-</div>
+        <div class="btn four">4</div>
+        <div class="btn five">5</div>
+        <div class="btn six">6</div>
+        <div class="btn plus" id="orange">+</div>
+
+        <div class="btn degree" id="orange">x^</div>
+        <div class="btn one">1</div>
+        <div class="btn two">2</div>
+        <div class="btn three">3</div>
+        <div class="btn minus" id="orange">-</div>
+
+        <div class="btn square" id="orange">x^2</div>
+        <div class="btn" id="zero">0</div>
+        <div class="btn dot">.</div>
+        <div class="btn equal" id="orange">=</div>
+      </div>
     </div>
-    <div class="input">
-      <p>0</p>
+    <div class="text_desc">
+      <p>Инструкция по эксплуатации:</p>
+      <ul>
+        <li>
+          Красным отмечены кнопки, функции которых на данный момент не доступны;
+        </li>
+        <li>
+          проценты считаются следующим образом: сначала вы вводите первое число
+          (над которым необходимо совершить операцию), а затем нажимаете на
+          кнопку процента и далее вводите необходимый процент;
+        </li>
+        <li>
+          факториал считается следующим образом: сначала вы вводите первое число
+          (над которым необходимо совершить операцию), а затем нажимаете на
+          кнопку <strong>x!</strong> и далее нажимаете на <strong>=</strong> ;
+        </li>
+        <li>
+          Чтобы извлечь из под корня <strong>(√x)</strong> число, необходимо провести те же
+          действия, что и для факториала;
+        </li>
+        <li>
+          Возведение в квадрат происходит аналогично извлечению из под корня;
+        </li>
+        <li>
+          Чтобы возвести число в произвольную степень необходимо выполнить
+          следующие действия: набрать исходную переменную, затем нажать на кнопку <strong>x^</strong> и ввести степень, затем нажать на <strong>=</strong>; 
+        </li>
+        <li><strong>sin - ctg</strong> считаются аналогично извлечению из под корня.</li>
+      </ul>
+      <p>В разработке находятся следующие возможности:</p>
+      <ul>
+        <li>удаление одного символа из строки ввода;</li>
+        <li>заключение выражения в скобки;</li>
+        <li>смена знака переменной;</li>
+        <li>смена радиан на градусы;</li>
+        <li>вывод значения числа ∏.</li>
+      </ul>
+      <p>
+        Найти исходный код моего калькулятора вы сможете на
+        <a href="https://github.com/artem-xopc/JScalculator" target="_blank"
+          >GitHub</a
+        >.
+      </p>
     </div>
-    <div class="btn_all">
-      <div class="btn clear" id="grey" onClick={clearAll}>C</div>
-      <div class="btn fact" id="grey">x!</div>
-      <div class="btn per" id="grey">%</div>
-      <div class="btn log" id="grey">lg</div>
-
-      <div class="btn open bg-orange">(</div>
-      <div class="btn close bg-orange">)</div>
-      <div class="btn degree bg-orange">x^</div>
-      <div class="btn divide bg-orange">/</div>
-
-      <div class="btn seven">7</div>
-      <div class="btn eight">8</div>
-      <div class="btn nine">9</div>
-      <div class="btn multi bg-orange">*</div>
-
-      <div class="btn four">4</div>
-      <div class="btn five">5</div>
-      <div class="btn six">6</div>
-      <div class="btn plus bg-orange">+</div>
-
-      <div class="btn one">1</div>
-      <div class="btn two">2</div>
-      <div class="btn three">3</div>
-      <div class="btn minus bg-orange">-</div>
-
-      <div class="btn" id="zero">0</div>
-      <div class="btn dot">.</div>
-      <div class="btn equal bg-orange">=</div>
-    </div>
-  </div>
-  <div class="text_desc">
-    <p>
-      В разработке находятся следующие возможности: 
-    </p>
-    <ul>
-      <li>заключение выражения в скобки;</li>
-      <li>функция логарифма (lg);</li>
-      <li>возведение в степень.</li>
-    </ul>
-  </div>
-  <script src="index.js"></script>
-  <!-- <script src="calc.js"></script> -->
-</body>
-
+    <!-- <footer class="footer_main">
+      <div class="desc">
+        <div>Создатель калькулятора Артём Хорс</div>
+        <div>Разрешено использовать код в целях обучения.</div>
+      </div>
+      <div>
+        <div class="footer_content">
+          <a href="https://t.me/artem_xopc" target="_blank"
+            ><img class="teleg" src="./icons/telegram.svg"
+          /></a>
+          <a href="https://vk.com/artem_xopc" target="_blank"
+            ><img class="vkon" src="./icons/vk.svg"
+          /></a>
+          <a href="https://github.com/artem-xopc" target="_blank"
+            ><img class="git" src="./icons/github.svg"
+          /></a>
+          <a href="https://www.youtube.com/@artem_xopc" target="_blank"
+            ><img class="youtube" src="./icons/youtube.svg"
+          /></a>
+          <a
+            href="https://www.litres.ru/author/artem-andreevich-romanov/"
+            target="_blank"
+            ><img class="letres" src="./icons/book-solid.svg"
+          /></a>
+        </div>
+      </div>
+    </footer> -->
+    <script src="index.js"></script>
+    <!-- <script src="calc.js"></script> -->
+  </body>
 </html>

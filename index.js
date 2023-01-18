@@ -1,5 +1,6 @@
 let firstNum = "";
 let secondNum = "";
+let thirdNum = "";
 let result = "";
 let sign = "";
 let finish = false;
@@ -21,7 +22,7 @@ const clearAll = () => {
   // history_out.textContent = 0;
 };
 
-// Функция удаления одного символа из поля output
+// Функция удаления одного символа из поля output (не работает)
 const backSpace = () => {
   let exp = output.textContent;
   output.textContent = epx.substring(0, exp.length - 1);
@@ -34,13 +35,34 @@ document.querySelector(".btn_all").onclick = (event) => {
   output.textContent = "0";
   // history_out.textContent = "-"; // Криво работающая история
 
+  const piNum = () => {
+    if (firstNum === "" && secondNum === "") {
+      firstNum = Math.PI.toFixed(6);
+      output.textContent = firstNum;
+      console.log(firstNum);
+    } else if (firstNum !== "") {
+      secondNum = Math.PI.toFixed(6);
+      output.textContent = secondNum;
+      console.log(secondNum);
+    }
+  };
+
+  const reversSign = () => {
+      firstNum = firstNum * -1;
+      output.textContent = firstNum;
+      console.log(firstNum);
+  };
+
+  if (event.target.classList.contains("pi")) piNum(); // если нажата кнопка "∏", то мы вызываем функцию piNum
+  if (event.target.classList.contains("reverse")) reversSign(); // если нажата кнопка "+/-", то мы вызываем функцию reversSign
+
   const key = event.target.textContent; // Получение значения из массива digit
-  var prevKey = key.length - 1;
 
   // В этом "разделе" описывается логика поведения переменных
   if (digit.includes(key)) {
     if (secondNum === "" && sign === "") {
       if (key === "." && firstNum.includes(".")) {
+        // Проверка на присутствие точки. Сделана для того, чтобы невозможно было два и более раз ввести символ "."
         firstNum += "";
         output.textContent = firstNum;
       } else {
@@ -51,7 +73,7 @@ document.querySelector(".btn_all").onclick = (event) => {
       secondNum = key;
       finish = false;
       output.textContent = secondNum;
-    } else if (key === "." && secondNum.includes(".")) {
+    } else if (key === "." && secondNum.includes(".")) { 
       secondNum += "";
       output.textContent = secondNum;
     } else {
@@ -71,10 +93,9 @@ document.querySelector(".btn_all").onclick = (event) => {
   }
 
   if (operator.includes(key)) {
-    sign = key;
-    output.textContent = `${firstNum} ` + `${sign} `;
-    console.log(sign);
-    return;
+      sign = key;
+      output.textContent = `${firstNum} ` + `${sign} `;
+      console.log(sign);
   }
 
   const ln = () => {
@@ -83,11 +104,11 @@ document.querySelector(".btn_all").onclick = (event) => {
       firstNum = "";
       secondNum = "";
       sign = "";
-      return; 
+      return;
     }
     firstNum = Math.log(firstNum).toFixed(2);
     output.textContent = firstNum;
-  }
+  };
 
   // В этом "разделе" описывается логика операторов
   if (key === "=") {
@@ -145,7 +166,7 @@ document.querySelector(".btn_all").onclick = (event) => {
           firstNum = "";
           secondNum = "";
           sign = "";
-          return; 
+          return;
         }
         firstNum = Math.log(firstNum).toFixed(2);
         output.textContent = firstNum;
@@ -156,7 +177,7 @@ document.querySelector(".btn_all").onclick = (event) => {
           firstNum = "";
           secondNum = "";
           sign = "";
-          return; 
+          return;
         }
         firstNum = Math.log(firstNum) / Math.log(secondNum);
         firstNum = firstNum.toFixed(2);
